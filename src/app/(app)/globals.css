@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    /* Blanco */
+    --foreground: 336 24% 20%;
+    /* Marrón oscuro (para textos sobre fondos claros) */
+    --card: 0 0% 100%;
+    /* Blanco */
+    --card-foreground: 336 24% 20%;
+    /* Marrón oscuro */
+    --popover: 0 0% 100%;
+    /* Blanco */
+    --popover-foreground: 336 24% 20%;
+    /* Marrón oscuro */
+    --primary: 340 80% 60%;
+    /* Rosa fuerte (para elementos principales) */
+    --primary-foreground: 0 0% 100%;
+    /* Blanco (para textos sobre elementos principales) */
+    --secondary: 340 80% 90%;
+    /* Rosa muy claro (para fondos secundarios) */
+    --secondary-foreground: 336 24% 20%;
+    /* Marrón oscuro (para textos sobre fondos secundarios) */
+    --muted: 340 60% 95%;
+    /* Rosa pálido (para fondos apagados) */
+    --muted-foreground: 336 24% 40%;
+    /* Marrón claro (para textos sobre fondos apagados) */
+    --accent: 340 80% 70%;
+    /* Rosa claro (para elementos de acento) */
+    --accent-foreground: 336 24% 20%;
+    /* Marrón oscuro (para textos sobre elementos de acento) */
+    --destructive: 0 80% 60%;
+    /* Rojo fuerte (para elementos destructivos) */
+    --destructive-foreground: 0 0% 100%;
+    /* Blanco (para textos sobre elementos destructivos) */
+    --border: 340 60% 90%;
+    /* Rosa muy claro (para bordes) */
+    --input: 340 60% 90%;
+    /* Rosa muy claro (para campos de entrada) */
+    --ring: 340 80% 60%;
+    /* Rosa fuerte (para anillos de enfoque) */
+    --radius: 1rem;
+    /* Radio de borde para elementos */
+  }
+
+
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
