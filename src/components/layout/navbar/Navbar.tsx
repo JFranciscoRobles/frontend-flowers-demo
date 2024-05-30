@@ -16,7 +16,7 @@ const gt = Great_Vibes({
 
 export const Navbar = () => {
   return (
-    <div className='p-8 my-8 bg-background'>
+    <div className='p-8 mb-8 bg-secondary'>
       <div className='container flex flex-col w-full'>
         <Typography variant='h1' className={cn('w-full font-bold text-center', gt.className)}>Corazones y Pétalos</Typography>
         <div className='flex flex-col items-center justify-center w-full gap-4 my-4 md:flex-row'>
