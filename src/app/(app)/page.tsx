@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { flowersData } from 'data'
+import Image from 'next/image'
 
 import React from 'react'
 
@@ -22,7 +23,7 @@ function Page () {
           </div>
           <div className='grid grid-cols-2 gap-4'>
             {flowers.map((flower) => (
-              <img
+              <Image
                 key={flower.id}
                 alt={flower.nombre}
                 className='rounded-lg shadow-lg'
