@@ -14,7 +14,7 @@ const menuData = [
     link: '/nosotros'
   },
   {
-    title: 'Pregutas frecuentes',
+    title: 'Preguntas frecuentes',
     link: '/preguntas-frecuentes'
   }
 ]

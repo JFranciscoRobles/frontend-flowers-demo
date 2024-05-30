@@ -1,16 +1,16 @@
 import { Button } from '@/components/ui/button'
 import Typography from '@/components/ui/typography'
 import { flowersData } from 'data'
-import Image from 'next/image'
 import { TextGenerateEffect } from '../ui-motion/text-generated-effects'
+import { DirectionAwareHover } from '../ui-motion/direction-aware-card'
 
 export const Hero = () => {
   const flowers = [flowersData[0], flowersData[1], flowersData[2], flowersData[3]]
 
   return (
     <section className='w-full py-20 '>
-      <div className='container grid items-center grid-cols-1 gap-8 md:grid-cols-2'>
-        <div className='space-y-6'>
+      <div className='container grid items-center grid-cols-1 gap-8 md:grid-cols-12'>
+        <div className='space-y-6 md:col-span-5'>
           <Typography variant='h1'><TextGenerateEffect words='Descubre la Belleza de las Flores' /></Typography>
           <Typography>
             Explora nuestra colección seleccionada de los flores y arreglos florales más vendidos.
@@ -20,20 +20,12 @@ export const Hero = () => {
             <Button variant='secondary'>Ver arreglos florales</Button>
           </div>
         </div>
-        <div className='grid grid-cols-2 gap-4'>
+        <div className='grid grid-cols-2 gap-4 md:col-span-7'>
           {flowers.map((flower) => (
-            <Image
-              key={flower.id}
-              alt={flower.nombre}
-              className='rounded-lg shadow-lg'
-              height='300'
-              src={flower.imagen}
-              style={{
-                aspectRatio: '300/300',
-                objectFit: 'cover'
-              }}
-              width='300'
-            />
+            <DirectionAwareHover imageUrl={flower.imagen} key={`flower-h-${flower.id}`}>
+              <p className='text-xl font-bold'>{flower.nombre}</p>
+              <p className='text-sm font-normal'>${flower.valor} / {flower.moneda}</p>
+            </DirectionAwareHover>
           ))}
         </div>
       </div>

@@ -14,7 +14,7 @@ const LinkUI: FC<LinkProps> = (props) => {
       {...props}
       href={props.href} // Ensure href is always defined
       className={cn(
-        'inline-flex justify-center items-center p-2 text-sm leading-none text-center rounded-lg ring-opacity-30 hover:bg-muted hover:shadow-outline focus:outline-none focus:ring-2 ring-primary/40 focus:bg-primary/20'
+        'hover:text-secondary-foreground text-primary-foreground inline-flex justify-center items-center p-2 text-sm leading-none text-center rounded-lg ring-opacity-30 hover:bg-secondary hover:shadow-outline focus:outline-none focus:ring-2 ring-secondary/40 focus:bg-secondary/20'
       )}
     >
       {props.children}
