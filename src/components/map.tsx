@@ -15,7 +15,7 @@ const defaults = {
   zoom: 19
 }
 
-const Map = (Map: MapProps) => {
+export const MapTest = (Map: MapProps) => {
   const { zoom = defaults.zoom, posix } = Map
 
   return (
@@ -35,5 +35,3 @@ const Map = (Map: MapProps) => {
     </MapContainer>
   )
 }
-
-export default Map

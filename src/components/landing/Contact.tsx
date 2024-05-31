@@ -5,7 +5,7 @@ import { Input } from '../ui/input'
 import { Label } from '../ui/label'
 import { Textarea } from '../ui/textarea'
 import Typography from '../ui/typography'
-import Map from '@/components/Map'
+import { MapTest } from '../Map'
 
 export const Contact = () => {
   return (
@@ -42,7 +42,7 @@ export const Contact = () => {
         </div>
         <div className='flex justify-center w-full'>
           <Suspense fallback={null}>
-            <Map posix={[4.79029, -75.69003]} />
+            <MapTest posix={[4.79029, -75.69003]} />
           </Suspense>
         </div>
       </div>
