@@ -5,7 +5,7 @@ import { Input } from '../ui/input'
 import { Label } from '../ui/label'
 import { Textarea } from '../ui/textarea'
 import Typography from '../ui/typography'
-import { MapTest } from '../Map'
+import { MapTest } from '../MapTest'
 
 export const Contact = () => {
   return (
