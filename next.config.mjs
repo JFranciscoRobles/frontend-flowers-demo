@@ -1,9 +1,14 @@
+import withMDX from '@next/mdx'
+
+const withMDXConfig = withMDX({
+  extension: /\.mdx?$/
+})
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Your Next.js config here
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   experimental: {
-    reactCompiler: true,
-    ppr: true
+    reactCompiler: true
   },
   images: {
     remotePatterns: [
@@ -15,4 +20,4 @@ const nextConfig = {
   }
 }
 
-export default nextConfig
+export default withMDXConfig(nextConfig)
