@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 'use client'
 import { useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
@@ -19,13 +20,15 @@ const defaults = {
 const MapTest = ({ posix, zoom = defaults.zoom }: MapProps) => {
   useEffect(() => {
     return () => {
-      // Cleanup any initialized map container to avoid the error
-      const mapContainer = document.querySelector('.leaflet-container')
-      if (mapContainer) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // Limpieza adecuada del contenedor del mapa
+      const mapContainers = document.querySelectorAll('.leaflet-container')
+      mapContainers.forEach(container => {
         // @ts-ignore
-        mapContainer._leaflet_id = null
-      }
+        if (container._leaflet_id) {
+          // @ts-ignore
+          container._leaflet_id = null
+        }
+      })
     }
   }, [])
 

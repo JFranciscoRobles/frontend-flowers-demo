@@ -1,3 +1,4 @@
+'use client'
 import { Suspense, useMemo } from 'react'
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
@@ -17,7 +18,7 @@ export const Contact = () => {
 
   return (
     <section className='w-full py-12 md:py-24 lg:py-32'>
-      <div className='container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:px-6'>
+      <div className='container grid grid-cols-1 gap-12 px-4 md:grid-cols-2 md:px-6'>
         <div className='flex flex-col items-start justify-center space-y-6'>
           <div className='flex flex-col space-y-6'>
             <Typography variant='h2'>¡Contactame!</Typography>
@@ -53,7 +54,7 @@ export const Contact = () => {
         </div>
         <div className='flex justify-center w-full'>
           <Suspense fallback={null}>
-            <MapTest posix={[4.79029, -75.69003]} />
+            <MapTest key={`map-${Date.now()}`} posix={[4.79029, -75.69003]} />
           </Suspense>
         </div>
       </div>
