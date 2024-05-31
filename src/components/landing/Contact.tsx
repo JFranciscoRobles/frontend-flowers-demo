@@ -1,20 +1,13 @@
-import { Suspense, useMemo } from 'react'
+'use client'
+import { Suspense } from 'react'
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { Label } from '../ui/label'
 import { Textarea } from '../ui/textarea'
 import Typography from '../ui/typography'
-import dynamic from 'next/dynamic'
+import Map from '@/components/Map'
 
 export const Contact = () => {
-  const Map = useMemo(() => dynamic(
-    () => import('@/components/Map'),
-    {
-      loading: () => <p>A map is loading</p>,
-      ssr: false
-    }
-  ), [])
-
   return (
     <section className='w-full py-12 md:py-24 lg:py-32'>
       <div className='container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:px-6'>
