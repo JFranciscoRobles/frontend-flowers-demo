@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import Typography from '@/components/ui/typography'
 import { flowersData } from 'data'
 import { TextGenerateEffect } from '../ui-motion/text-generated-effects'
-import { DirectionAwareHover } from '../ui-motion/direction-aware-card'
+import { ItemCard } from '../item-card'
 
 export const Hero = () => {
   const flowers = [flowersData[0], flowersData[1], flowersData[2], flowersData[3]]
@@ -21,11 +21,8 @@ export const Hero = () => {
           </div>
         </div>
         <div className='grid grid-cols-2 gap-4 md:col-span-7'>
-          {flowers.map((flower) => (
-            <DirectionAwareHover imageUrl={flower.imagen} key={`flower-h-${flower.id}`}>
-              <p className='text-xl font-bold'>{flower.nombre}</p>
-              <p className='text-sm font-normal'>${flower.valor} / {flower.moneda}</p>
-            </DirectionAwareHover>
+          {flowers.map((item) => (
+            <ItemCard key={item.id} {...item} />
           ))}
         </div>
       </div>

@@ -150,3 +150,6 @@ export const flowersData = [
     disponibilidad: true
   }
 ]
+
+export type FlowersData = typeof flowersData
+export type FlowerData = typeof flowersData[number]

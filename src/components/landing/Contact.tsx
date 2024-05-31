@@ -1,3 +1,4 @@
+import { Suspense, useMemo } from 'react'
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { Label } from '../ui/label'
@@ -5,12 +6,15 @@ import { Textarea } from '../ui/textarea'
 import Typography from '../ui/typography'
 import dynamic from 'next/dynamic'
 
-const Map = dynamic(() => import('../map'), {
-  ssr: false,
-  loading: () => <p>Loading...</p>
-})
-
 export const Contact = () => {
+  const Map = useMemo(() => dynamic(
+    () => import('@/components/Map'),
+    {
+      loading: () => <p>A map is loading</p>,
+      ssr: false
+    }
+  ), [])
+
   return (
     <section className='w-full py-12 md:py-24 lg:py-32'>
       <div className='container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:px-6'>
@@ -39,12 +43,14 @@ export const Contact = () => {
               <Textarea id='message' placeholder='¿Como podemos ayudarte?' />
             </div>
             <Button type='submit' className='w-full'>
-              Submit
+              Enviar
             </Button>
           </form>
         </div>
         <div className='flex justify-center w-full'>
-          <Map />
+          <Suspense fallback={null}>
+            <Map posix={[4.79029, -75.69003]} />
+          </Suspense>
         </div>
       </div>
     </section>

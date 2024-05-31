@@ -16,6 +16,10 @@ const menuData = [
   {
     title: 'Preguntas frecuentes',
     link: '/preguntas-frecuentes'
+  },
+  {
+    title: 'Contacto',
+    link: '/contacto'
   }
 ]
 
