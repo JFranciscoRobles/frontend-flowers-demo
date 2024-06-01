@@ -23,7 +23,6 @@ const Page = () => {
           </AccordionItem>
         ))}
       </Accordion>
-
     </main>
   )
 }

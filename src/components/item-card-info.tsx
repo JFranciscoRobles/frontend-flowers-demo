@@ -1,15 +1,15 @@
 import { FlowerData } from 'data'
-import { DirectionAwareHover } from './ui-motion/direction-aware-card'
 import Link from 'next/link'
 import Typography from './ui/typography'
+import { FloatCard } from './ui-motion/float-card'
 
-export const ItemCard = (item : FlowerData) => {
+export const ItemCardInfo = (item : FlowerData) => {
   return (
     <Link href={item.href}>
-      <DirectionAwareHover imageUrl={item.imagen}>
+      <FloatCard imageUrl={item.imagen}>
         <Typography className='text-xl font-bold text-primary-foreground'>{item.nombre}</Typography>
         <Typography className='text-primary-foreground'>${item.valor} / {item.moneda}</Typography>
-      </DirectionAwareHover>
+      </FloatCard>
     </Link>
   )
 }
