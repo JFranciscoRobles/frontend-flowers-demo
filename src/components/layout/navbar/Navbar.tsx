@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button'
 import { Menu } from './Menu'
 import Typography from '@/components/ui/typography'
 import {
@@ -6,7 +5,7 @@ import {
   Great_Vibes
 } from 'next/font/google'
 import { cn } from '@/lib/utils'
-import { ShoppingCartIcon } from 'lucide-react'
+import CartButton from '@/components/cart/cart-button'
 
 const gt = Great_Vibes({
   weight: '400',
@@ -20,9 +19,7 @@ export const Navbar = () => {
         <Typography variant='h1' className={cn('w-full font-bold text-center p-2 text-primary-foreground', gt.className)}>Corazones y Pétalos</Typography>
         <div className='flex flex-col items-center justify-center w-full gap-4 my-4 md:flex-row text-primary-foreground'>
           <Menu />
-          <Button className='m-2' variant='secondary'>
-            <ShoppingCartIcon size={24} />
-          </Button>
+          <CartButton />
         </div>
       </div>
 

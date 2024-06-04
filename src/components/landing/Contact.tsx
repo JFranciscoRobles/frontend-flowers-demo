@@ -7,7 +7,11 @@ import { Textarea } from '../ui/textarea'
 import Typography from '../ui/typography'
 import dynamic from 'next/dynamic'
 
-export const Contact = () => {
+type ContactProps = {
+  id: string
+}
+
+export const Contact = ({ id }: ContactProps) => {
   const MapTest = useMemo(() => dynamic(
     () => import('@/components/MapTest'),
     {
@@ -54,7 +58,7 @@ export const Contact = () => {
         </div>
         <div className='flex justify-center w-full'>
           <Suspense fallback={null}>
-            <MapTest key={`map-${Date.now()}`} posix={[4.79029, -75.69003]} />
+            <MapTest key={`map-${Date.now()}${id}`} posix={[4.79029, -75.69003]} />
           </Suspense>
         </div>
       </div>

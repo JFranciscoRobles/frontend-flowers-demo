@@ -1,6 +1,7 @@
+import CardAddButton from '@/components/cart/cart-add-button'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+
 import Typography from '@/components/ui/typography'
 import { flowersData } from 'data'
 import Image from 'next/image'
@@ -38,9 +39,7 @@ function Page ({ params }: { params: { slug: string } }) {
             {flower?.descripcion}
           </Typography>
 
-          <Button className='my-6 ml-auto'>
-            Agregar al carrito
-          </Button>
+          <CardAddButton item={flower} />
 
           <div className='flex flex-wrap gap-6 my-6 '>
             {flower.categorias.map((categoria) => (
@@ -60,7 +59,7 @@ function Page ({ params }: { params: { slug: string } }) {
             Preguntas frecuentes FAQ
           </Typography>
         </div>
-        <Accordion type='single' collapsible className='container w-full my-12'>
+        <Accordion type='multiple' className='container w-full my-12'>
           {preguntasFrecuentes.map((pregunta, index) => (
             <AccordionItem value={index.toString()} key={index} className='w-full'>
               <AccordionTrigger className='w-full'>

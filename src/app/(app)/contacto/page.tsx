@@ -9,7 +9,7 @@ const Page = () => {
           Estamos aquí para ayudarte
         </Typography>
       </div>
-      <Contact />
+      <Contact id='contact-page' />
     </main>
   )
 }

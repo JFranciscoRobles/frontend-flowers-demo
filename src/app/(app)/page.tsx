@@ -8,7 +8,7 @@ function Page () {
     <main className='flex flex-col w-full my-8 '>
       <Hero />
       <Flowers />
-      <Contact />
+      <Contact id='home' />
     </main>
 
   )

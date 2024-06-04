@@ -5,7 +5,7 @@ import { Navbar } from '@/components/layout/navbar/Navbar'
 import { ReactNode } from 'react'
 import Footer from '@/components/landing/Footer'
 import { ViewTransitions } from 'next-view-transitions'
-
+import { Provider } from 'jotai'
 type Args = {
   children: ReactNode;
 };
@@ -27,9 +27,11 @@ export default function Layout ({ children }: Args) {
       <html lang='es-MX' suppressHydrationWarning>
         <head />
         <body className={cn('min-h-screen  antialiased', montserrat.className)}>
-          <Navbar />
-          {children}
-          <Footer />
+          <Provider>
+            <Navbar />
+            {children}
+            <Footer />
+          </Provider>
         </body>
       </html>
     </ViewTransitions>
