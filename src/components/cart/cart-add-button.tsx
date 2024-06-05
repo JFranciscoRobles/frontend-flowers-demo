@@ -1,11 +1,12 @@
 'use client'
-import { useAddToCart } from '@/lib/cart-utils'
-import { FlowerData } from 'data'
+
 import React from 'react'
 import { Button } from '../ui/button'
+import { useAddToCart } from '@/lib/cartAtoms'
+import { Product } from '@/lib/data'
 
 type Props = {
-    item: FlowerData;
+    item: Product;
 }
 
 function CardAddButton ({ item }: Props) {

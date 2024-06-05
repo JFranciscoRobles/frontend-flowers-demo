@@ -1,4 +1,17 @@
-export const flowersData = [
+export type Product = {
+  id: string;
+  nombre: string;
+  slug: string;
+  descripcion: string;
+  valor: number;
+  moneda: string;
+  categorias: string[];
+  imagen: string;
+  disponibilidad: boolean;
+  href: string;
+};
+
+export const productsData: Product[] = [
   {
     id: 'a1b2c',
     nombre: 'Ramo de Rosas Rojas',
@@ -180,6 +193,3 @@ export const flowersData = [
     href: '/flores/ramo-de-hortensias-rosadas'
   }
 ]
-
-export type FlowersData = typeof flowersData
-export type FlowerData = typeof flowersData[number]

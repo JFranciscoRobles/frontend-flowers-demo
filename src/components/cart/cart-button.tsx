@@ -1,20 +1,28 @@
 'use client'
 import React from 'react'
-import { Button } from '../ui/button'
-import { MinusIcon, PlusIcon, ShoppingCartIcon } from 'lucide-react'
 import { useAtom } from 'jotai'
-import { cartAtom } from 'atom'
+import { Button } from '../ui/button'
+import { ShoppingCartIcon } from 'lucide-react'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet'
-import { useRemoveFromCart, useUpdateQuantity } from '@/lib/cart-utils'
+
 import Typography from '../ui/typography'
+import { cartItemsAtom, cartTotalItemsAtom, cartTotalToPayAtom } from '@/lib/cartAtoms'
+import CartItem from './cart-item'
 
-function CartButton () {
-  const [cart] = useAtom(cartAtom)
-  const removeFromCart = useRemoveFromCart()
-  const updateQuantity = useUpdateQuantity()
+function ShoppingCart () {
+  const [cart] = useAtom(cartItemsAtom)
+  const [totalItems] = useAtom(cartTotalItemsAtom)
+  const [totalToPay] = useAtom(cartTotalToPayAtom)
 
-  const totalItems = cart.reduce((previus, current) => (previus) + current.quantity, 0)
-  const totalToPay = cart.reduce((previus, current) => (previus) + current.price * current.quantity, 0)
+  const handleSendWhatsApp = () => {
+    const phoneNumber = '526645684580'
+    const cartDetails = cart.map(item => `${item.quantity}x ${item.name} - Precio: ${item.price}`).join('%0A')
+    const message = `Hola, quiero hacer la siguiente compra:%0A${cartDetails}%0ATotal a pagar: ${totalToPay}`
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`
+
+    window.open(whatsappUrl, '_blank')
+  }
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -27,21 +35,12 @@ function CartButton () {
           <SheetTitle>Mi Carrito</SheetTitle>
           <SheetDescription>
             <div className='flex flex-col space-y-2'>
-              {cart.map((item) => (
-                <div className='flex items-center w-full' key={item.id}>
-                  <Typography variant='span' size='large' className='mr-2'>{item.quantity}x</Typography>
-                  <Typography variant='span' size='small'>{item.name}</Typography>
-                  <Typography variant='span' size='small' className='ml-auto mr-2'>Precio: {item.price}</Typography>
-                  {item.quantity === 1 && <Button onClick={() => removeFromCart(item.id)} variant='outline' size='sm'><MinusIcon size={12} /></Button>}
-                  {item.quantity > 1 && <Button onClick={() => updateQuantity(item.id, item.quantity - 1)} variant='outline' size='sm'><MinusIcon size={12} /></Button>}
-                  <Button onClick={() => updateQuantity(item.id, item.quantity + 1)} size='sm' className='ml-2'><PlusIcon size={12} /></Button>
-                </div>
-              ))}
+              {cart.map((item) => <CartItem item={item} key={item.id} />)}
             </div>
             <Typography>Total: {totalToPay}</Typography>
             {cart.length > 0 &&
               <div className='flex flex-col mt-12'>
-                <Button variant='default'>Enviar</Button>
+                <Button variant='default' onClick={handleSendWhatsApp}>Enviar</Button>
               </div>}
           </SheetDescription>
         </SheetHeader>
@@ -50,4 +49,4 @@ function CartButton () {
   )
 }
 
-export default CartButton
+export default ShoppingCart

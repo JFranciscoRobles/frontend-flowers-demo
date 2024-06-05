@@ -1,27 +1,5 @@
 import LinkUI from '@/components/ui/link'
-
-const menuData = [
-  {
-    title: 'Inicio',
-    link: '/'
-  },
-  {
-    title: 'Todas las Flores',
-    link: '/flores'
-  },
-  {
-    title: 'Sobre Nosotros',
-    link: '/nosotros'
-  },
-  {
-    title: 'Preguntas frecuentes',
-    link: '/preguntas-frecuentes'
-  },
-  {
-    title: 'Contacto',
-    link: '/contacto'
-  }
-]
+import { menuData } from '@/lib/utils'
 
 export const Menu = () => {
   return (

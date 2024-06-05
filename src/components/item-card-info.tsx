@@ -1,9 +1,13 @@
-import { FlowerData } from 'data'
 import Link from 'next/link'
 import Typography from './ui/typography'
 import { FloatCard } from './ui-motion/float-card'
+import { Product } from '@/lib/data'
 
-export const ItemCardInfo = (item : FlowerData) => {
+type ItemCardInfoProps = {
+  item: Product
+};
+
+export const ItemCardInfo = ({ item } : ItemCardInfoProps) => {
   return (
     <Link href={item.href}>
       <FloatCard imageUrl={item.imagen}>

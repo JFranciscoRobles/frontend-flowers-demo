@@ -1,11 +1,11 @@
-import { flowersData } from 'data'
 import React from 'react'
 import Typography from '../ui/typography'
 import { Button } from '../ui/button'
 import { ItemCard } from '../item-card'
+import { productsData } from '@/lib/data'
 
 export function Flowers () {
-  const flowers = flowersData
+  const products = productsData
     .sort(() => Math.random() - Math.random())
     .slice(0, 8)
   return (
@@ -14,8 +14,8 @@ export function Flowers () {
         <Typography variant='h2' className='container text-center text-primary-foreground'>Conoce nuestros mas hermosos ramos.</Typography>
       </div>
       <div className='container grid grid-cols-2 gap-6 my-12 lg:grid-cols-4'>
-        {flowers.map((item) => (
-          <ItemCard key={`section-${item.id}`} {...item} />
+        {products.map((item) => (
+          <ItemCard key={`section-${item.id}`} item={item} />
         )
         )}
       </div>

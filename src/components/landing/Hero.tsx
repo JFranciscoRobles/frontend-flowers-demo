@@ -1,11 +1,11 @@
 import { Button } from '@/components/ui/button'
 import Typography from '@/components/ui/typography'
-import { flowersData } from 'data'
 import { TextGenerateEffect } from '../ui-motion/text-generated-effects'
 import { ItemCard } from '../item-card'
+import { productsData } from '@/lib/data'
 
 export const Hero = () => {
-  const flowers = [flowersData[0], flowersData[1], flowersData[2], flowersData[3]]
+  const products = [productsData[0], productsData[1], productsData[2], productsData[3]]
 
   return (
     <section className='w-full py-20 '>
@@ -21,8 +21,8 @@ export const Hero = () => {
           </div>
         </div>
         <div className='grid grid-cols-2 gap-4 md:col-span-7'>
-          {flowers.map((item) => (
-            <ItemCard key={item.id} {...item} />
+          {products.map((item) => (
+            <ItemCard key={item.id} item={item} />
           ))}
         </div>
       </div>

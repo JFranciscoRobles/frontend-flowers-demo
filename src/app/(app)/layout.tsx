@@ -3,9 +3,11 @@ import { Raleway } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/layout/navbar/Navbar'
 import { ReactNode } from 'react'
-import Footer from '@/components/landing/Footer'
+import Footer from '@/components/layout/Footer'
 import { ViewTransitions } from 'next-view-transitions'
 import { Provider } from 'jotai'
+import { CartProvider } from '@/components/cart/CartProvider'
+
 type Args = {
   children: ReactNode;
 };
@@ -28,9 +30,11 @@ export default function Layout ({ children }: Args) {
         <head />
         <body className={cn('min-h-screen  antialiased', montserrat.className)}>
           <Provider>
-            <Navbar />
-            {children}
-            <Footer />
+            <CartProvider>
+              <Navbar />
+              {children}
+              <Footer />
+            </CartProvider>
           </Provider>
         </body>
       </html>

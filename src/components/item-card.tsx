@@ -1,9 +1,13 @@
-import { FlowerData } from 'data'
 import { DirectionAwareHover } from './ui-motion/direction-aware-card'
 import Link from 'next/link'
 import Typography from './ui/typography'
+import { Product } from '@/lib/data'
 
-export const ItemCard = (item : FlowerData) => {
+type ItemCardProps = {
+  item: Product
+};
+
+export const ItemCard = ({ item } : ItemCardProps) => {
   return (
     <Link href={item.href}>
       <DirectionAwareHover imageUrl={item.imagen}>
