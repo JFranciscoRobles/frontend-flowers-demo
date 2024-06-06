@@ -1,5 +1,6 @@
 import { atom, useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
+import { toast } from 'sonner'
 
 export interface CartType {
     id: string;
@@ -15,6 +16,7 @@ export const useAddToCart = () => {
 
   return (product: CartType) => {
     setCart((prevCart) => {
+      toast(`${product.name} ah sido agregado.`)
       const productIndex = prevCart.findIndex((item) => item.id === product.id)
       if (productIndex !== -1) {
         const newCart = [...prevCart]
@@ -31,6 +33,7 @@ export const useRemoveFromCart = () => {
   const [, setCart] = useAtom(cartItemsAtom)
 
   return (productId: string) => {
+    toast('Producto removido.')
     setCart((prevCart) => prevCart.filter((product) => product.id !== productId))
   }
 }

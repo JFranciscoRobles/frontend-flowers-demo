@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import Typography from './ui/typography'
-import { FloatCard } from './ui-motion/float-card'
 import { Product } from '@/lib/data'
+import { FloatCard } from '../ui-motion/float-card'
+import Typography from '../ui/typography'
 
 type ItemCardInfoProps = {
   item: Product

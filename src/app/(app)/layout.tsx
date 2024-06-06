@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer'
 import { ViewTransitions } from 'next-view-transitions'
 import { Provider } from 'jotai'
 import { CartProvider } from '@/components/cart/CartProvider'
+import { Toaster } from 'sonner'
 
 type Args = {
   children: ReactNode;
@@ -23,7 +24,7 @@ export const metadata = {
   description: 'Bienvenido a Flores JFR'
 }
 
-export default function Layout ({ children }: Args) {
+export default function Layou ({ children }: Args) {
   return (
     <ViewTransitions>
       <html lang='es-MX' suppressHydrationWarning>
@@ -34,8 +35,10 @@ export default function Layout ({ children }: Args) {
               <Navbar />
               {children}
               <Footer />
+              <Toaster />
             </CartProvider>
           </Provider>
+          <Toaster />
         </body>
       </html>
     </ViewTransitions>

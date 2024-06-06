@@ -1,7 +1,7 @@
-import { DirectionAwareHover } from './ui-motion/direction-aware-card'
 import Link from 'next/link'
-import Typography from './ui/typography'
 import { Product } from '@/lib/data'
+import { DirectionAwareHover } from '../ui-motion/direction-aware-card'
+import Typography from '../ui/typography'
 
 type ItemCardProps = {
   item: Product

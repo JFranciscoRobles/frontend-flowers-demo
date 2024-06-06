@@ -1,14 +1,14 @@
 import { Button } from '@/components/ui/button'
 import Typography from '@/components/ui/typography'
 import { TextGenerateEffect } from '../ui-motion/text-generated-effects'
-import { ItemCard } from '../item-card'
 import { productsData } from '@/lib/data'
+import { ItemCard } from '../items/item-card'
 
 export const Hero = () => {
   const products = [productsData[0], productsData[1], productsData[2], productsData[3]]
 
   return (
-    <section className='w-full py-20 '>
+    <section className='w-full my-8 md:py-20 '>
       <div className='container grid items-center grid-cols-1 gap-8 md:grid-cols-12'>
         <div className='space-y-6 md:col-span-5'>
           <Typography variant='h1'><TextGenerateEffect words='Descubre la Belleza de las Flores' /></Typography>

@@ -1,4 +1,4 @@
-import { FlowersList } from '@/components/landing/FlowersList'
+import { Items } from '@/components/items/items'
 import Typography from '@/components/ui/typography'
 import React from 'react'
 
@@ -11,7 +11,7 @@ function Page () {
         </Typography>
       </div>
       <div>
-        <FlowersList />
+        <Items />
       </div>
     </main>
   )

@@ -26,7 +26,7 @@ export const FloatCard = ({
     <motion.div
       ref={ref}
       className={cn(
-        'aspect-[2/3] w-full bg-transparent rounded-lg overflow-hidden group/card relative',
+        'aspect-square w-full bg-transparent rounded-lg overflow-hidden group/card relative',
         className
       )}
       whileHover={{ scale: 1.05 }} // Añadido para hacer flotar el card
