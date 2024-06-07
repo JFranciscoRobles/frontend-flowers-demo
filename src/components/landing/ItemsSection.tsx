@@ -1,9 +1,9 @@
 import React from 'react'
 import Typography from '../ui/typography'
 import { Button } from '../ui/button'
-
-import { ItemCard } from '../items/item-card'
 import { productsData } from '@/lib/data'
+import { ItemCardInfo } from '../items/item-card-info'
+import LinkUI from '../ui/link'
 
 export function ItemsSection () {
   const products = productsData
@@ -16,12 +16,14 @@ export function ItemsSection () {
       </div>
       <div className='container grid grid-cols-2 gap-6 my-12 lg:grid-cols-4'>
         {products.map((item) => (
-          <ItemCard key={`section-${item.id}`} item={item} />
+          <ItemCardInfo key={`section-${item.id}`} item={item} />
         )
         )}
       </div>
       <div className='flex justify-center w-full mb-6'>
-        <Button variant='secondary' size='lg'>Quiero ver mas Ramos</Button>
+        <LinkUI href='/flores'>
+          <Button variant='secondary' size='lg'>Quiero ver mas Ramos</Button>
+        </LinkUI>
       </div>
     </div>
 

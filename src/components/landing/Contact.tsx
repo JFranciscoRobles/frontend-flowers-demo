@@ -58,7 +58,7 @@ export const Contact = ({ id }: ContactProps) => {
         </div>
         <div className='flex justify-center w-full'>
           <Suspense fallback={null}>
-            <MapTest key={`map-${Date.now()}${id}`} posix={[4.79029, -75.69003]} />
+            <MapTest key={`map-${Date.now()}${id}`} posix={[32.50934139821342, -116.9945957131532]} />
           </Suspense>
         </div>
       </div>

@@ -38,7 +38,7 @@ export default function Layou ({ children }: Args) {
               <Toaster />
             </CartProvider>
           </Provider>
-          <Toaster />
+          <Toaster richColors />
         </body>
       </html>
     </ViewTransitions>
