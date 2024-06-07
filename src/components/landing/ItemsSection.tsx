@@ -14,7 +14,7 @@ export function ItemsSection () {
       <div className='my-8'>
         <Typography variant='h2' className='container text-center text-primary-foreground'>Conoce nuestros mas hermosos ramos.</Typography>
       </div>
-      <div className='container grid grid-cols-2 gap-6 my-12 lg:grid-cols-4'>
+      <div className='container grid gap-6 my-12 lg:grid-cols-4'>
         {products.map((item) => (
           <ItemCardInfo key={`section-${item.id}`} item={item} />
         )
